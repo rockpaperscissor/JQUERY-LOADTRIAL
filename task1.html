@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $('#submit').on('click',function(e){
+            //     e.preventDefault();
+            //     let a = $('#fname').val();
+            //  let b = $('#lname').val();
+             
+            //  let fullname = a +" "+ b;
+            // let ptag = $('<p>').text(fullname);
+            //     console.log(ptag);
+            //     $('.display').append(ptag);
+            // $('p').attr("id","p1id");
+            //     $('button').on('click',function(){
+            //        alert($('p').attr("id")) 
+            //     })
+            //     $('#p1id').attr("id","p2id");
+               $.ajax({
+            url:'a.php',
+            type:'get',
+            dataType:'json',
+            success:function(response){
+                $('<h2>').html(JSON.stringify(response))},
+            error:function(xhr,status,error){
+                $('<h2>').html('error is :'+ status+' '+error)
+            }
+
+
+
+            
+            
+        })
+
+
+            })
+            
+
+
+
+        });
+             
+        
+    
+        
+
+    
+
+    
+
+
+
+
+
+        
+    </script>
+   <form action="">
+    <label for="fname"></label>
+    <input type="text" name="firstname" id="fname"
+    >
+    <label for="lname"></label>
+    <input type="text" name="lastname" id="lname">
+    <input type="submit"           id="submit" value="join and display"    >
+   </form> 
+   <div class="display">
+    <br><br><br><br><br>
+    <button>Show attr</button>
+
+   </div>
+</body>
+</html>

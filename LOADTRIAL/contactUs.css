@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html,body{
+
+    width: 100%;
+    height: 100%;
+
+
+
+}
+.chatdiv{
+    min-height: 100vh;
+    /* background-color: rgba(255, 0, 0, 0.259); */
+    position: relative;
+    width: 100%;
+    background-color: purple;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.chatheaddiv{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    border-bottom-left-radius: 50px 100px;
+    border-bottom-right-radius: 50px 100px;
+    display: flex;
+    align-items:flex-end ;
+    
+
+}
+.chatheaddiv h3{
+    padding: 25px;
+
+}
+.chatpagediv .usermsg{
+    margin: 50px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.chatpagediv .appmsg{
+    margin: 50px;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+.chatpagediv .msg{
+    height:40px;
+   padding: 10px;
+    width: fit-content;
+    background-color: white;
+
+    
+    border-radius:10px ;
+}

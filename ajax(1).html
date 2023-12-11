@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+</head>
+<body>
+    <form id="forms" method="post" action="a.php">
+        <input type="text" name="name" id="name">
+        <input type="text" name="username" id="">
+        <input type="submit" name="" id="">
+    </form>
+    
+<div id="response"></div>
+<div id="result"></div>
+    <script>
+        $(function(){
+            $('#forms').submit(function(e){
+                e.preventDefault()
+                // let formdata=$(this).serialize()
+                let formdata={
+                    name:$('#name').val(),
+
+                }
+                let a = $('#name').val();
+                $('#response').html(a);
+
+                $.ajax({    
+                    url:$(this).attr('action'),
+                    data:formdata,//send data
+                    dataType:'json',
+                    type:$(this).attr('method'),
+                    success:function(response){
+                        $('#result').html(JSON.stringify(response))
+                    },
+                    error:function(xhr,status,error){
+                        $('#result').html('error is'+status+' '+error)
+                    }
+
+                    
+                })
+            })
+        })
+    </script>
+    
+</body>
+</html>
+<style>
+   
+</style>

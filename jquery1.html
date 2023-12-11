@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="abc.php" id="forms"  method="get">
+        <input type="text" name="name" id="abc">
+        <input type="text" name="name" id="">
+        <input type="submit" name="" id="">
+    </form>
+    <div id="response"> </div>
+    <div id="result"></div>
+    <script>
+        $(function(){
+            $('#forms').submit(function(e){
+                e.preventDefault()
+               let formdata =  $(this).serialize()
+               $('#response').html(formdata)
+               $.ajax({
+                //ur -from i which php api -that api de 
+                url:$(this).attr('action'),//url.abc.php//this here is which form is currently 
+                data:formdata,
+                dataType:'json',
+                type:$(this).attr('method'),
+                success:function(response){
+                    $('#result').html(JSON.stringify(response))
+
+                },
+                error:function(xhr,status,error){
+
+                    $('#result').html('error is '+status+' '+error)
+                }
+                
+               })
+            })
+        })
+    </script>
+     <!-- $(function(){
+        $('#forms').submit(function(e){
+            e.preventDefault()
+            let formdata=$(this).serialize()
+            $('#response').html(formdata)
+
+            $.ajax({    
+                url:$(this).attr('action'),
+                data:formdata,
+                dataType:'json',
+                type:$(this).attr('method'),
+                success:function(response){
+                    $('#result').html(JSON.stringify(response))
+                },
+                error:function(xhr,status,error){
+                    $('#result').html('error is'+status+' '+error)
+                }
+
+                
+            })
+        })
+    }) -->
+
+</body>
+</html>
+<style>
+
+</style>

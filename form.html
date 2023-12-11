@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+</head>
+<body>
+    <script>
+        $(function(){
+            $('#forms').submit(function(e){
+                let a  = $('#input').val();
+                
+                $('#ordered').append($('<li>').append(a));
+                    $('#input').val(' ');
+
+                    //double click to delete
+                $('#ordered li').on('dblclick',function(){
+                   let b=  $(this).text();
+                   console.log(b);
+                   $(this).remove();
+                    $('#deleted').append($('<li>').append(b));
+
+                })
+
+
+
+
+
+
+
+
+
+                e.preventDefault();
+            })
+        })
+    </script>
+    <form id="forms"            action="">
+        <label for="input">Add Tasks here</label>
+        <input type="text" id="input" name="task">
+
+        <input id=""        type="submit" value="Add">
+    </form>
+    <ol id="ordered">
+        
+    </ol>
+    <br><br><br><br><br>
+    <div class="deletedbox"> <ol id="deleted">Deleted tasks</ol></div>
+   
+    <style>
+        #ordered li{
+            cursor: pointer;
+        }
+        .deletedbox{
+            border: 1px solid maroon;
+            width: fit-content;
+            height: fit-content;
+        }
+    </style>
+</body>
+</html>

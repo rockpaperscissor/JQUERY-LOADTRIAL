@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET</title>
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+</head>
+<body>
+    <!-- <div id="response"></div> -->
+    <div id="reply"></div>
+    
+    <script>
+$(function(){
+    $.ajax({
+        url:'a.php',
+        type:'get',
+        dataType:'json',
+        success:function(response){
+            $('#reply').html(JSON.stringify(response))
+                    },
+                    error:function(xhr,status,error){
+                        $('#reply').html('error is'+status+' '+error)
+                    }
+
+
+        })
+        
+
+    
+
+    
+
+});
+
+
+    </script>
+</body>
+</html>

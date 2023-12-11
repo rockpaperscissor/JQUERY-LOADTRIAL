@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html,body{
+
+    width: 100%;
+    height: 100%;
+
+
+
+}
+.contactdiv{
+    display: flex;
+    flex-direction: column;
+   
+    
+height: 100vh;
+    /* background-color: rgba(255, 0, 0, 0.259); */
+    position: relative;
+    width: 100%;
+    background-color: purple;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.contactheaddiv{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    border-bottom-left-radius: 50px 100px;
+    border-bottom-right-radius: 50px 100px;
+    display: flex;
+    align-items:flex-end ;
+    justify-content: space-between;
+    
+
+}
+.contactheaddiv h3{
+    padding: 25px;
+
+}
+
+
+.nav1{
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    /* background-color: bisque; */
+    display: flex;
+    align-items: center;
+
+    justify-content: flex-end;
+    z-index: 99;
+    padding: 25px;
+    gap: 1px;
+
+
+
+    
+
+}
+.nav1 .links a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #0e0d0d;
+    font-weight: 500;
+    font-size: 14px;
+    margin:  0 20px;
+
+}
+.nav1 .links a:hover{
+    background-color: rgba(189, 66, 226, 0.519);
+    border-radius: 40px;
+    
+    padding: 10px;
+    scale: 1.2;
+    
+}
+.contactpagediv{
+    
+    min-height: calc(100vh - 100px);
+    margin: 150px;
+
+
+
+}
